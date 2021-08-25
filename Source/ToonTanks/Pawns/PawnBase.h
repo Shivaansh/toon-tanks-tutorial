@@ -15,20 +15,28 @@ class TOONTANKS_API APawnBase : public APawn
 
 private:
 
-	UPROPERTY() UCapsuleComponent* CapsuleComp = nullptr;
-	UPROPERTY() USceneComponent* ProjectileSpawnPosition = nullptr;
-	UPROPERTY() UStaticMeshComponent* BodyBaseMesh = nullptr;
-	UPROPERTY() UStaticMeshComponent* BodyTurretMesh = nullptr;
-	
-public:
-	// Sets default values for this pawn's properties
-	APawnBase();
+	UPROPERTY(VisibleAnywhere, BluePrintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true")) 
+	UCapsuleComponent* CapsuleComp = nullptr;
+
+	UPROPERTY(VisibleAnywhere, BluePrintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true")) 
+	USceneComponent* ProjectileSpawnPosition = nullptr;
+
+	UPROPERTY(VisibleAnywhere, BluePrintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true")) 
+	UStaticMeshComponent* BodyBaseMesh = nullptr;
+
+	UPROPERTY(VisibleAnywhere, BluePrintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true")) 
+	UStaticMeshComponent* BodyTurretMesh = nullptr;
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 public:	
+	// Sets default values for this pawn's properties
+	APawnBase();
+
+	
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
