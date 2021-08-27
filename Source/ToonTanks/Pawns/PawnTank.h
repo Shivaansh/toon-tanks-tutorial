@@ -36,6 +36,18 @@ private:
 	UPROPERTY(VisibleAnywhere, BluePrintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true")) 
 	USpringArmComponent* SpringArm = nullptr;
 
+	float MoveSpeed = 100.0f;
+	float RotateSpeed = 100.0f;
+
+	FVector MoveDirection;
+	FQuat RotationDirection;
+
+	void CalculateMovement(float value);	
+	void CalculateRotation(float value);
+
+	void Move();
+	void Rotate();
+
 protected:
 
 	virtual void BeginPlay() override;
