@@ -36,7 +36,10 @@ private:
 	UPROPERTY(VisibleAnywhere, BluePrintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true")) 
 	USpringArmComponent* SpringArm = nullptr;
 
+	UPROPERTY(EditAnywhere, BluePrintReadWrite, Category = "Movement", meta = (AllowPrivateAccess = "true")) 
 	float MoveSpeed = 100.0f;
+
+	UPROPERTY(EditAnywhere, BluePrintReadWrite, Category = "Movement", meta = (AllowPrivateAccess = "true")) 
 	float RotateSpeed = 100.0f;
 
 	FVector MoveDirection;
