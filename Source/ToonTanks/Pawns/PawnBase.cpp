@@ -23,3 +23,26 @@ APawnBase::APawnBase()
 	ProjectileSpawnPosition->SetupAttachment(BodyTurretMesh);	
 }
 
+
+void APawnBase::RotateTurret(FVector TargetLocation) 
+{
+	FVector Target = FVector(TargetLocation.X, TargetLocation.X, BodyTurretMesh->GetComponentLocation().Z);
+	FVector TurretLocation = BodyTurretMesh->GetComponentLocation();
+
+	FVector Difference = FVector(Target- TurretLocation);
+	FRotator TurretRotation = Difference.Rotation();
+	// UE_LOG(LogTemp, Warning, TEXT("Difference - X: %f, Y: %f, Z: %f"), Difference.X, Difference.Y, Difference.Z);
+	// Difference is zero along Z axis
+	// UE_LOG(LogTemp, Warning, TEXT("Rotator - Pitch: %f, Yaw: %f, Roll: %f"), TurretRotation.Pitch, TurretRotation.Yaw, TurretRotation.Roll);
+	BodyTurretMesh->SetWorldRotation(TurretRotation);
+}
+
+void APawnBase::Fire() 
+{
+	UE_LOG(LogTemp, Warning, TEXT("Fire - Base Class"));
+}
+
+void APawnBase::HandleDestruction() 
+{
+	
+}

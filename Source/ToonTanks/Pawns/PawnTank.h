@@ -45,6 +45,8 @@ private:
 	FVector MoveDirection;
 	FQuat RotationDirection;
 
+	APlayerController* PlayerControllerRef;
+
 	void CalculateMovement(float value);	
 	void CalculateRotation(float value);
 
@@ -54,5 +56,7 @@ private:
 protected:
 
 	virtual void BeginPlay() override;
+
+	virtual void HandleDestruction() override;
 
 };

@@ -44,5 +44,7 @@ class TOONTANKS_API APawnTurret : public APawnBase
 
 		virtual void BeginPlay() override;
 
+		virtual void HandleDestruction() override;
+
 	
 };

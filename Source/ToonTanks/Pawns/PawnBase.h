@@ -30,6 +30,11 @@ private:
 protected:
 	// Called when the game starts or when spawned
 	// virtual void BeginPlay() override;
+	void RotateTurret(FVector TargetLocation);
+
+	void Fire();
+
+	virtual void HandleDestruction();
 
 public:	
 	// Sets default values for this pawn's properties
